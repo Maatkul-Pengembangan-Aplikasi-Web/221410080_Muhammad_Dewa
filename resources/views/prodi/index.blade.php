@@ -40,14 +40,15 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $prodi->nama }}</td>
                                 <td>
-                                    <a
-                                        href="{{ route('prodi/edit', $prodi->id) }}"class="btn btn-secondary">Edit</a>
-                                    <form action="{{ route('prodi/delete', $prodi->id) }}" method="POST"
+                                <form action="{{ route('prodi/delete', $prodi->id) }}" method="POST"
                                         class="d-inline">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger">Hapus</button>
                                     </form>
+                                    <a
+                                        href="{{ route('prodi/edit', $prodi->id) }}"class="btn btn-secondary">Edit</a>
+                                    
                                 </td>
                             </tr>
                         @endforeach
